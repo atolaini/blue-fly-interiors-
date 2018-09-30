@@ -1,0 +1,36 @@
+*,
+*::after,
+*::before {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit;
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+html {
+  font-size: 50%;
+
+  @include media(">=screen-sm") {
+    font-size: 56.25%;
+  }
+
+  @include media(">=screen-md") {
+    font-size: 62.5%;
+  }
+
+  // @include respond(big-desktop) {
+  //   font-size: 75%;
+  // }
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  box-sizing: border-box;
+  font-size-adjust: 100%;
+}
