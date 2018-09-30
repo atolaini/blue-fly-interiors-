@@ -44,3 +44,94 @@ h2 {
   font-family: main-heading;
   font-size: 7rem;
   color: #131f53; }
+
+.nav-bar {
+  background: #131f53;
+  width: 20rem;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: all 0.7s ease-out;
+  transition: all 0.7s ease-out;
+  overflow-x: hidden; }
+  .nav-bar__nav {
+    list-style: none;
+    padding-right: 4rem; }
+  .nav-bar__item {
+    margin-bottom: 2rem;
+    -webkit-transform: translateX(calc(100% + 20rem));
+            transform: translateX(calc(100% + 20rem));
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in; }
+  .nav-bar__link {
+    color: white;
+    letter-spacing: 1.7px;
+    font-size: 2rem; }
+
+.hamburger-container {
+  width: 20rem;
+  height: 7rem;
+  background: #131f53;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2; }
+  .hamburger-container:hover {
+    cursor: pointer; }
+  .hamburger-container__line {
+    width: 7rem;
+    height: 3px;
+    background: white;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease; }
+    .hamburger-container__line:not(:last-child) {
+      margin-bottom: 1rem; }
+    .hamburger-container__line--2 {
+      opacity: 1; }
+
+.show-items {
+  -webkit-transform: translateX(0);
+          transform: translateX(0); }
+
+.hide-line {
+  opacity: 0; }
+
+.line-down {
+  -webkit-transform: translateY(7px);
+          transform: translateY(7px); }
+
+.line-up {
+  -webkit-transform: translateY(-7px);
+          transform: translateY(-7px); }
+
+.active div {
+  background: #fcac01;
+  -webkit-transition: background 2s ease;
+  transition: background 2s ease; }
