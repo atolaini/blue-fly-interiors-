@@ -29,8 +29,24 @@ html {
 }
 
 body {
+  font-family: $primary-font;
   font-size: 1.6rem;
-  line-height: 1.7;
+  line-height: 1.6;
+  letter-spacing: 2px;
   box-sizing: border-box;
   font-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color: $black;
+}
+
+h1 {
+  font-family: main-heading;
+  font-size: 10rem;
+}
+
+h2 {
+  font-family: main-heading;
+  font-size: 7rem;
+  color: $brand-primary;
 }
