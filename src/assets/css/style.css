@@ -27,6 +27,7 @@ html {
 body {
   font-family: "arial";
   font-size: 1.6rem;
+  line-height: 1.6;
   letter-spacing: 2px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -34,7 +35,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   color: #545454;
-  overflow: hidden; }
+  overflow-x: hidden; }
 
 h1 {
   font-family: main-heading;
@@ -43,7 +44,8 @@ h1 {
 h2 {
   font-family: main-heading;
   font-size: 7rem;
-  color: #131f53; }
+  color: #131f53;
+  font-weight: lighter; }
 
 .nav-bar {
   background: #131f53;
@@ -167,7 +169,8 @@ h2 {
   background: url("/assets/images/hero.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  line-height: 1; }
   .home-page-hero__overlay {
     position: absolute;
     width: 100%;
@@ -191,6 +194,68 @@ h2 {
     color: white;
     font-weight: lighter; }
 
+.who-we-are {
+  padding: 0px 1.5rem;
+  margin-top: 2rem; }
+  .who-we-are__text-container {
+    width: 100%;
+    max-width: 96rem;
+    margin: auto; }
+  .who-we-are__heading {
+    text-align: center; }
+
+.services__heading {
+  text-align: center; }
+
+.services__image {
+  background: url("/assets/images/service-img.jpg");
+  width: 100%;
+  max-width: 48rem;
+  height: 65rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.services__flex-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.icon-container .icon-circle {
+  background: #fcac01;
+  border-radius: 50%;
+  height: 13rem;
+  width: 13rem;
+  position: relative;
+  margin: 0 1rem; }
+  .icon-container .icon-circle__icon {
+    height: 7.3rem;
+    width: 7.3rem;
+    display: table-cell;
+    vertical-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%); }
+
 @media (min-width: 768px) {
   .home-page-hero__heading {
-    font-size: 10rem; } }
+    font-size: 10rem; }
+  .who-we-are {
+    margin-top: 4rem;
+    padding: 0px 6.5rem; }
+    .who-we-are__heading {
+      text-align: left;
+      margin-bottom: 3.5rem; }
+  .services {
+    padding: 0px 6.5rem; }
+    .services__heading {
+      text-align: left; } }

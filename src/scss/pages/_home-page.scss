@@ -5,6 +5,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  line-height: 1;
 
   &__overlay {
     position: absolute;
@@ -37,12 +38,86 @@
   }
 }
 
+.who-we-are {
+  padding: 0px 1.5rem;
+  margin-top: 2rem;
+
+  &__text-container {
+    width: 100%;
+    max-width: 96rem;
+    margin: auto;
+  }
+
+  &__heading {
+    text-align: center;
+  }
+}
+
+.services {
+  &__heading {
+    text-align: center;
+  }
+
+  &__image {
+    background: url("/assets/images/service-img.jpg");
+    width: 100%;
+    max-width: 48rem;
+    height: 65rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  &__flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.icon-container {
+  .icon-circle {
+    background: $brand-secondary;
+    border-radius: 50%;
+    height: 13rem;
+    width: 13rem;
+    position: relative;
+    margin: 0 1rem;
+
+    &__icon {
+      height: 7.3rem;
+      width: 7.3rem;
+      display: table-cell;
+      vertical-align: center;
+      @include abs-center;
+    }
+  }
+}
+
 //Media queries
 
 @include media(">=screen-sm") {
   .home-page-hero {
     &__heading {
       font-size: 10rem;
+    }
+  }
+
+  .who-we-are {
+    margin-top: 4rem;
+    @include page-padding;
+
+    &__heading {
+      text-align: left;
+      margin-bottom: 3.5rem;
+    }
+  }
+
+  .services {
+    @include page-padding;
+
+    &__heading {
+      text-align: left;
     }
   }
 }
