@@ -27,14 +27,14 @@ html {
 body {
   font-family: "arial";
   font-size: 1.6rem;
-  line-height: 1.6;
   letter-spacing: 2px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  color: #545454; }
+  color: #545454;
+  overflow: hidden; }
 
 h1 {
   font-family: main-heading;
@@ -67,7 +67,8 @@ h2 {
           transform-origin: top;
   -webkit-transition: all 0.7s ease-out;
   transition: all 0.7s ease-out;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  z-index: 2; }
   .nav-bar__nav {
     list-style: none;
     padding-right: 4rem; }
@@ -102,7 +103,7 @@ h2 {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 2; }
+  z-index: 3; }
   .hamburger-container:hover {
     cursor: pointer; }
   .hamburger-container__line {
@@ -135,3 +136,61 @@ h2 {
   background: #fcac01;
   -webkit-transition: background 2s ease;
   transition: background 2s ease; }
+
+.contact-btn {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  width: 13.5rem;
+  height: 4rem; }
+  .contact-btn__cta {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #fcac01;
+    background: none;
+    font-family: "main-heading";
+    color: #fcac01;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px; }
+    .contact-btn__cta:hover {
+      cursor: pointer;
+      background: #fcac01;
+      color: white; }
+    .contact-btn__cta:focus {
+      outline: none; }
+
+.home-page-hero {
+  position: relative;
+  height: 50rem;
+  background: url("/assets/images/hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  .home-page-hero__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(19, 31, 83, 0.5); }
+  .home-page-hero__heading-container {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    padding: 0px 1rem;
+    margin: 0px 2rem;
+    border-left: 2px solid #fcac01; }
+  .home-page-hero__heading {
+    font-size: 7rem; }
+  .home-page-hero__sub-heading {
+    color: white;
+    font-weight: lighter; }
+
+@media (min-width: 768px) {
+  .home-page-hero__heading {
+    font-size: 10rem; } }

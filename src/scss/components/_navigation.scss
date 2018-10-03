@@ -12,6 +12,7 @@
   transform-origin: top;
   transition: all 0.7s ease-out;
   overflow-x: hidden;
+  z-index: 2;
 
   &__nav {
     list-style: none;
@@ -42,7 +43,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 3;
 
   &:hover {
     cursor: pointer;
