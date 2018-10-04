@@ -31,7 +31,7 @@ $(document).ready(function() {
     line3.removeClass("line-up");
   }
 
-  function closeNav() {}
+  // function closeNav() {}
 
   burgerContainer.on("click", function() {
     if (!$(this).hasClass("active")) {
@@ -51,5 +51,22 @@ $(document).ready(function() {
       $(this).removeClass("active");
       lines.removeClass("show-items");
     }
+  });
+
+  //BEFORE AFTER SLIDER
+  var wrapper = $("#wrapper");
+  var topLayer = wrapper.find(".top");
+  var handle = wrapper.find(".handle");
+  var skew = 0;
+  var delta = 0;
+
+  if (wrapper.hasClass("skewed") != -1) {
+    skew = 1000;
+  }
+
+  wrapper.on("mousemove", function(e) {
+    delta = (e.pageX - window.innerWidth / 2) * 0.5;
+    handle.css("left", e.pageX + delta + "px");
+    topLayer.css("width", e.pageX + skew + delta + "px");
   });
 });
