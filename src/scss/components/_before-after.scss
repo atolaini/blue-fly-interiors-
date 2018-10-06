@@ -1,25 +1,22 @@
-.before-after {
-  margin-top: 10rem;
-}
-
 #wrapper {
   position: relative;
   width: 100%;
-  min-height: 55vw;
+  min-height: 40vw;
   overflow: hidden;
+  margin-top: 10rem;
 }
 
 .layer {
   position: absolute;
   width: 100vw;
-  min-height: 55vw;
+  min-height: 40vw;
   overflow: hidden;
 }
 
 .layer .content-wrap {
   position: absolute;
   width: 100vw;
-  min-height: 55vw;
+  min-height: 40vw;
 }
 
 .layer .content-body {
@@ -72,21 +69,11 @@
   position: absolute;
   height: 100%;
   display: block;
-  background: #fdab00;
+  background: $brand-secondary;
   width: 0.5rem;
   top: 0;
   left: 50%;
   z-index: 3;
-}
-
-.handle::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 3px;
-  height: 1rem;
-  background: #fdab00;
 }
 
 .skewed .handle {
@@ -98,29 +85,11 @@
 
 .skewed .top {
   transform: skew(-30deg);
-  margin-left: -100rem;
-  width: calc(50vw + 100rem);
+  margin-left: -1000px;
+  width: calc(50vw + 1000px);
 }
 
 .skewed .top .content-wrap {
   transform: skew(30deg);
-  margin-left: 100rem;
-}
-
-button {
-  width: 10rem;
-  height: 5rem;
-}
-
-svg {
-  width: 30rem;
-  height: 30rem;
-  fill: none;
-  stroke: black;
-  stroke-width: 2;
-  transition: all cubic-bezier(0.77, 0.38, 0.43, 0.86);
-}
-
-.reveal {
-  stroke-dashoffset: 0;
+  margin-left: 1000px;
 }

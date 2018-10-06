@@ -65,7 +65,7 @@
     background: url("/assets/images/service-img.jpg");
     max-width: 100%;
     // max-width: 48rem;
-    height: 65rem;
+    height: 40vw;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -134,6 +134,7 @@
 
     &__heading {
       text-align: left;
+      //@include page-padding;
     }
   }
 
@@ -166,6 +167,7 @@
 
     &__image {
       width: 50%;
+      height: 65rem;
     }
 
     .icon-container__icon {
