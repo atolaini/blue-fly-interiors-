@@ -38,6 +38,8 @@
   }
 }
 
+//WHO WE ARE....................
+
 .who-we-are {
   padding: 0px 1.5rem;
   margin-top: 2rem;
@@ -110,6 +112,50 @@
   }
 }
 
+//PROJECTS SECTION
+.projects {
+  height: auto;
+  background: url("/assets/images/projects-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding-bottom: 3rem;
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__tile {
+    background: url("/assets/images/projects-placeholder.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  &__info {
+    background: transparentize($color: $brand-primary, $amount: 0.5);
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40rem;
+    padding: 1rem;
+  }
+
+  &__tile-heading {
+    margin-bottom: 0.5rem;
+  }
+
+  &__tile-text {
+    margin-bottom: 0.5rem;
+  }
+}
+
 //Media queries
 
 @include media(">=screen-sm") {
@@ -142,6 +188,45 @@
     p {
       padding-top: 1rem;
       margin-bottom: 3rem;
+    }
+  }
+
+  .projects {
+    max-height: 76rem;
+
+    &__heading {
+      @include page-padding;
+      text-align: left;
+    }
+
+    &__container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    &__tile {
+      width: 25%;
+      height: 54rem;
+      overflow-x: hidden;
+      margin: 0 2rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__info {
+      display: block;
+      height: 30rem;
+      width: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__tile-heading {
+      margin-bottom: 2rem;
     }
   }
 }

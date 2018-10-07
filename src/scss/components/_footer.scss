@@ -1,0 +1,52 @@
+.footer {
+  @include page-padding;
+  width: 100%;
+  height: 18rem;
+  background: $brand-primary;
+  display: flex;
+  //justify-content: space-between;
+  align-items: center;
+  position: relative;
+  border-top: 2px solid $brand-secondary;
+
+  &__logo {
+    border-left: 2px solid $brand-secondary;
+    padding: 1rem;
+    h2,
+    h3 {
+      color: white;
+    }
+
+    h2 {
+      font-size: 3.5rem;
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      font-family: $heading-primary;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    list-style: none;
+    @include abs-center;
+  }
+
+  &__nav-item:not(:last-child) {
+    margin-right: 2rem;
+  }
+
+  &__nav-link {
+    color: white;
+  }
+
+  &__copyright {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1rem;
+  }
+}
