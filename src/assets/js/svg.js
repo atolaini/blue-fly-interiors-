@@ -1,20 +1,3 @@
-$(document).ready(function() {
-  var hero = $(".services-hero").outerHeight() / 2;
-  var path = $("svg path");
-
-  // function drawSvg() {
-  //   path.addClass("animation");
-  // }
-
-  $(window).on("scroll", function() {
-    var wScroll = $(this).scrollTop();
-
-    if (hero <= wScroll) {
-      path.addClass("animation");
-    }
-  });
-});
-
 //get svg's paths and lengths
 var path = document.querySelectorAll("svg path");
 var pathArr = [];
@@ -32,6 +15,21 @@ pathArr.forEach(function(el) {
     path[x].style.strokeDasharray = lengths;
     path[x].style.strokeDashoffset = "-" + lengths;
   }
+});
+
+$(document).ready(function() {
+  var hero = $(".services-hero").outerHeight() / 2;
+  var path = $("svg path");
+
+  $(window).on("scroll", function() {
+    console.log(321);
+    var wScroll = $(this).scrollTop();
+    console.log(wScroll);
+
+    if (hero == wScroll) {
+      path.addClass("animation");
+    }
+  });
 });
 
 // document.addEventListener("DOMContentLoaded", function() {

@@ -60,7 +60,7 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
   -webkit-transform: scaleY(0);
@@ -70,7 +70,7 @@ h2 {
   -webkit-transition: all 0.7s ease-out;
   transition: all 0.7s ease-out;
   overflow-x: hidden;
-  z-index: 2; }
+  z-index: 3; }
   .nav-bar__nav {
     list-style: none;
     padding-right: 4rem; }
@@ -105,7 +105,7 @@ h2 {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 3; }
+  z-index: 12; }
   .hamburger-container:hover {
     cursor: pointer; }
   .hamburger-container__line {
@@ -134,7 +134,7 @@ h2 {
   -webkit-transform: translateY(-7px);
           transform: translateY(-7px); }
 
-.active div {
+.active-nav div {
   background: #fcac01;
   -webkit-transition: background 2s ease;
   transition: background 2s ease; }
@@ -473,7 +473,6 @@ path {
       -ms-flex-wrap: wrap;
           flex-wrap: wrap; }
     .projects__tile {
-      width: 25%;
       height: 54rem;
       overflow-x: hidden;
       margin: 0 2rem; }
@@ -598,10 +597,10 @@ path {
 .services__nav-link, .services__nav-link:link, .services__nav-link:active {
   color: #545454; }
 
-.services {
+.services-content {
   position: relative;
   height: 60rem; }
-  .services__svg svg {
+  .services-content__svg svg {
     position: absolute;
     bottom: 0;
     right: 0;

@@ -16,7 +16,7 @@ $(document).ready(function() {
   });
 
   burgerContainer.on("mouseleave", function() {
-    if (!$(this).hasClass("active")) {
+    if (!$(this).hasClass("active-nav")) {
       setTimeout(function() {
         closeLines();
       }, 200);
@@ -34,8 +34,8 @@ $(document).ready(function() {
   // function closeNav() {}
 
   burgerContainer.on("click", function() {
-    if (!$(this).hasClass("active")) {
-      $(this).addClass("active");
+    if (!$(this).hasClass("active-nav")) {
+      $(this).addClass("active-nav");
       setTimeout(function() {
         lines.addClass("show-items");
       }, 500);
@@ -48,7 +48,7 @@ $(document).ready(function() {
         line1.css("marginRight", "0px");
         line3.css("marginLeft", "0px");
       }, 500);
-      $(this).removeClass("active");
+      $(this).removeClass("active-nav");
       lines.removeClass("show-items");
     }
   });
@@ -69,4 +69,10 @@ $(document).ready(function() {
     handle.css("left", e.pageX + delta + "px");
     topLayer.css("width", e.pageX + skew + delta + "px");
   });
+
+  //dynamic footer date;
+  var copy = $(".footer__copyright");
+  var year = new Date().getFullYear();
+
+  copy.append(" " + year);
 });
