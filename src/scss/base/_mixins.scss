@@ -9,3 +9,46 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin contact-btn {
+  font-family: $heading-primary;
+  font-weight: bold;
+  border: 3px solid $brand-primary;
+  background: none;
+  height: 5rem;
+  color: $brand-primary;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  outline: none !important;
+  overflow: hidden;
+  padding: 0px 30px;
+  position: relative;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 1;
+
+  &::before {
+    background: $brand-primary;
+    bottom: 0;
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    transform: translateX(-110%) skewX(30deg);
+    transition: transform ease 0.5s;
+    width: 150%;
+    z-index: -1;
+  }
+  &:hover {
+    color: white;
+  }
+  &:hover:before {
+    transform: translateX(-25%) skewX(30deg);
+  }
+}

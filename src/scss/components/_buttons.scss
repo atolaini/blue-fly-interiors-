@@ -28,3 +28,14 @@
     }
   }
 }
+
+.button-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.services-contact-btn {
+  @include contact-btn;
+  margin: 0 auto;
+}

@@ -12,7 +12,7 @@
   transform-origin: top;
   transition: all 0.7s ease-out;
   overflow-x: hidden;
-  z-index: 3;
+  z-index: 4;
 
   &__nav {
     list-style: none;
@@ -85,4 +85,18 @@
 .active-nav div {
   background: $brand-secondary;
   transition: background 2s ease;
+}
+
+.home-icon {
+  position: fixed;
+  top: 1rem;
+  left: 1.5rem;
+  color: white;
+  z-index: 3222;
+  font-size: 4rem;
+  transition: color 0.5s ease;
+
+  &:hover {
+    color: $brand-secondary;
+  }
 }

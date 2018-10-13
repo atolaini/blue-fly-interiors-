@@ -34,7 +34,7 @@ body {
   font-size-adjust: 100%;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  color: #545454;
+  color: #1f1f1f;
   overflow-x: hidden; }
 
 h1 {
@@ -70,7 +70,7 @@ h2 {
   -webkit-transition: all 0.7s ease-out;
   transition: all 0.7s ease-out;
   overflow-x: hidden;
-  z-index: 3; }
+  z-index: 4; }
   .nav-bar__nav {
     list-style: none;
     padding-right: 4rem; }
@@ -139,6 +139,18 @@ h2 {
   -webkit-transition: background 2s ease;
   transition: background 2s ease; }
 
+.home-icon {
+  position: fixed;
+  top: 1rem;
+  left: 1.5rem;
+  color: white;
+  z-index: 3222;
+  font-size: 4rem;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease; }
+  .home-icon:hover {
+    color: #fcac01; }
+
 .contact-btn {
   position: fixed;
   top: 1rem;
@@ -162,6 +174,53 @@ h2 {
       color: white; }
     .contact-btn__cta:focus {
       outline: none; }
+
+.button-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem; }
+
+.services-contact-btn {
+  font-family: "main-heading";
+  font-weight: bold;
+  border: 3px solid #131f53;
+  background: none;
+  height: 5rem;
+  color: #131f53;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  outline: none !important;
+  overflow: hidden;
+  padding: 0px 30px;
+  position: relative;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: 1;
+  margin: 0 auto; }
+  .services-contact-btn::before {
+    background: #131f53;
+    bottom: 0;
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    -webkit-transform: translateX(-110%) skewX(30deg);
+            transform: translateX(-110%) skewX(30deg);
+    -webkit-transition: -webkit-transform ease 0.5s;
+    transition: -webkit-transform ease 0.5s;
+    transition: transform ease 0.5s;
+    transition: transform ease 0.5s, -webkit-transform ease 0.5s;
+    width: 150%;
+    z-index: -1; }
+  .services-contact-btn:hover {
+    color: white; }
+  .services-contact-btn:hover:before {
+    -webkit-transform: translateX(-25%) skewX(30deg);
+            transform: translateX(-25%) skewX(30deg); }
 
 #wrapper {
   position: relative;
@@ -304,7 +363,7 @@ svg {
 
 path {
   stroke: #837f7f;
-  opacity: 0.6;
+  opacity: 0.2;
   stroke-width: 7px;
   fill: none; }
 
@@ -595,13 +654,54 @@ path {
             transform: scaleX(1); }
 
 .services__nav-link, .services__nav-link:link, .services__nav-link:active {
-  color: #545454; }
+  color: #1f1f1f; }
 
 .services-content {
   position: relative;
-  height: 60rem; }
-  .services-content__svg svg {
+  height: 80rem; }
+  .services-content__svg {
     position: absolute;
     bottom: 0;
     right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -2; }
+    .services-content__svg svg {
+      padding-left: 3rem; }
+  .services-content__flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .services-content h2 {
+    text-align: center; }
+  .services-content__text, .services-content__slider {
+    max-width: 100%; }
+  .services-content__text {
+    margin-bottom: 3rem;
+    padding: 0px 4rem; }
+  .services-content .owl-dots {
+    display: none; }
+
+@media (min-width: 991px) {
+  .services-content h2 {
+    text-align: left;
+    margin-bottom: 2rem; }
+  .services-content__svg svg {
+    padding-left: 0; }
+  .services-content__flex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100%; }
+  .services-content__text, .services-content__slider {
+    max-width: 50%; }
+  .services-content__text {
+    margin-bottom: 3rem; } }
