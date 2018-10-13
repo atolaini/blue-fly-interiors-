@@ -35,7 +35,8 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   color: #1f1f1f;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  position: relative; }
 
 h1 {
   font-family: main-heading;
@@ -178,7 +179,7 @@ h2 {
 .button-container {
   width: 100%;
   text-align: center;
-  margin-top: 2rem; }
+  margin-top: 3rem; }
 
 .services-contact-btn {
   font-family: "main-heading";
@@ -221,6 +222,14 @@ h2 {
   .services-contact-btn:hover:before {
     -webkit-transform: translateX(-25%) skewX(30deg);
             transform: translateX(-25%) skewX(30deg); }
+
+.back-to-top-btn {
+  position: fixed;
+  bottom: 0;
+  right: 3rem;
+  z-index: 3333333;
+  color: white;
+  font-size: 5rem; }
 
 #wrapper {
   position: relative;
@@ -390,6 +399,7 @@ path {
     background: rgba(19, 31, 83, 0.5); }
   .home-page-hero__heading-container {
     color: white;
+    position: absolute;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -705,3 +715,58 @@ path {
     max-width: 50%; }
   .services-content__text {
     margin-bottom: 3rem; } }
+
+.projects-page-header {
+  position: relative; }
+
+.projects-hero {
+  position: relative;
+  height: 50rem;
+  background: url("/assets/images/projects-hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  line-height: 1; }
+  .projects-hero__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(19, 31, 83, 0.5); }
+  .projects-hero__heading-container {
+    position: absolute;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    padding: 0px 1rem;
+    margin: 0px 2rem;
+    border-left: 2px solid #fcac01; }
+  .projects-hero__heading {
+    color: white; }
+
+.projects-main-content {
+  padding: 0 1rem; }
+  .projects-main-content h2 {
+    text-align: center; }
+  .projects-main-content__text {
+    margin-bottom: 2rem; }
+
+@media (min-width: 991px) {
+  .projects-main-content {
+    height: auto;
+    min-height: 60rem; }
+    .projects-main-content h2 {
+      text-align: left; }
+    .projects-main-content__flex {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+    .projects-main-content__text, .projects-main-content__slider {
+      max-width: 50%; }
+    .projects-main-content__text {
+      padding: 0px 4rem; }
+    .projects-main-content__slider {
+      margin-top: 3rem; } }

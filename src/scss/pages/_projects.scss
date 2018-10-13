@@ -1,0 +1,70 @@
+.projects-page-header {
+  position: relative;
+}
+
+.projects-hero {
+  position: relative;
+  height: 50rem;
+  background: url("/assets/images/projects-hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  line-height: 1;
+
+  &__overlay {
+    @include overlay;
+  }
+
+  &__heading-container {
+    position: absolute;
+    //width: 100%;
+    @include abs-center;
+    padding: 0px 1rem;
+    margin: 0px 2rem;
+    border-left: 2px solid $brand-secondary;
+  }
+
+  &__heading {
+    color: white;
+  }
+}
+
+.projects-main-content {
+  @include mobile-padding;
+
+  h2 {
+    text-align: center;
+  }
+
+  &__text {
+    margin-bottom: 2rem;
+  }
+}
+
+@include media(">=screen-md") {
+  .projects-main-content {
+    height: auto;
+    min-height: 60rem;
+
+    h2 {
+      text-align: left;
+    }
+
+    &__flex {
+      display: flex;
+    }
+
+    &__text,
+    &__slider {
+      max-width: 50%;
+    }
+
+    &__text {
+      @include page-padding;
+    }
+
+    &__slider {
+      margin-top: 3rem;
+    }
+  }
+}

@@ -8,21 +8,20 @@
   line-height: 1;
 
   &__overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: transparentize($color: $brand-primary, $amount: 0.5);
+    @include overlay;
+    // position: absolute;
+    // width: 100%;
+    // height: 100%;
+    // top: 0;
+    // left: 0;
+    // background: transparentize($color: $brand-primary, $amount: 0.5);
   }
 
   &__heading-container {
     color: white;
     position: absolute;
     //width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    @include abs-center;
     padding: 0px 1rem;
     margin: 0px 2rem;
     border-left: 2px solid $brand-secondary;
