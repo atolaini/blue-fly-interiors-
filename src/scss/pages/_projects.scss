@@ -9,6 +9,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: none;
   line-height: 1;
 
   &__overlay {
@@ -38,6 +39,13 @@
 
   &__text {
     margin-bottom: 2rem;
+  }
+}
+
+@include media(">=screen-xs") {
+  .projects-hero {
+    background-attachment: fixed;
+    background-position: left;
   }
 }
 

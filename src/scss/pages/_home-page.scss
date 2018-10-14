@@ -5,6 +5,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: none;
   line-height: 1;
 
   &__overlay {
@@ -63,6 +64,7 @@
   }
 
   &__image {
+    border: 1px solid red;
     background: url("/assets/images/service-img.jpg");
     max-width: 100%;
     // max-width: 48rem;
@@ -157,8 +159,16 @@
 
 //Media queries
 
+@include media(">=screen-xs") {
+  .home-page-hero {
+    background-attachment: fixed;
+    background-position: left;
+  }
+}
+
 @include media(">=screen-sm") {
   .home-page-hero {
+    background-position: center left;
     &__heading {
       font-size: 10rem;
     }

@@ -16,7 +16,7 @@
 
   &__nav {
     list-style: none;
-    padding-right: 4rem;
+    padding-left: 4rem;
   }
 
   &__item {
@@ -64,6 +64,29 @@
       // transition: opacity 0.5s ease;
     }
   }
+}
+
+.nav-bar__drop-down {
+  //border: 1px solid white;
+  overflow: hidden;
+  transform: scaleY(0);
+  height: 0;
+}
+
+.show-dropDown,
+.hide-dropDown {
+  transform-origin: top;
+}
+
+.show-dropDown {
+  transform: scaleY(1);
+  transition: all 0.5s ease;
+  height: 20rem;
+}
+
+.hide-dropDown {
+  transform: scaleY(0);
+  transition: all 0.5s ease;
 }
 
 .show-items {

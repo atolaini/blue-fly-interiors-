@@ -2,8 +2,9 @@
   position: relative;
   height: 50rem;
   background: url("/assets/images/services-hero.jpg");
-  background-size: cover;
+  background-size: auto 50rem;
   background-repeat: no-repeat;
+  background-attachment: none;
   background-position: center;
 
   &__overlay {
@@ -130,6 +131,13 @@
 
   .owl-dots {
     display: none;
+  }
+}
+
+@include media(">=screen-xs") {
+  .services-hero {
+    background-attachment: fixed;
+    background-position: 9% 0;
   }
 }
 
