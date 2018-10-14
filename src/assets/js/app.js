@@ -75,4 +75,43 @@ $(document).ready(function() {
   var year = new Date().getFullYear();
 
   copy.append(" " + year);
+
+  //animate svg path
+  var scrolling = false;
+
+  $(window).on("scroll", function() {
+    scrolling = true;
+  });
+
+  setInterval(function() {
+    if (scrolling) {
+      scrolling = false;
+
+      var svg = $("svg path");
+      var heroSection = $(".services-hero").height() / 2;
+      var wScroll = $(window).scrollTop();
+      console.log(wScroll);
+      if (wScroll >= heroSection) {
+        svg.addClass("animation");
+      }
+    }
+  }, 50);
+});
+
+//Vanilla javascript
+
+//SVG PATHS
+var path = document.querySelectorAll("svg path");
+var pathArr = [];
+
+for (var i = 0; i < path.length; i++) {
+  pathArr.push(path[i]);
+}
+
+console.log(pathArr);
+
+pathArr.forEach(function(el) {
+  var x = (el.style.strokeDasharray = el.getTotalLength());
+  var y = (el.style.strokeDashoffset = "-" + el.getTotalLength());
+  console.log(y);
 });
