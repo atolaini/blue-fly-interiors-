@@ -57,21 +57,23 @@
 
 .services {
   position: relative;
+  margin-bottom: 0;
+  margin-top: 3rem;
 
   &__heading {
     text-align: center;
-    margin: 3rem 0;
+    margin-bottom: 3rem;
   }
 
   &__image {
     background: url("/assets/images/service-img.jpg");
-    //max-width: 100%;
-    max-width: 48rem;
-    height: 100vh;
+    max-width: 100%;
+    //max-width: 48rem;
+    height: 40vh;
     background-repeat: no-repeat;
-    background-size: cover;
+    //background-size: cover;
     background-position: 100%;
-    margin-top: 5rem;
+    //margin-top: 5rem;
   }
 
   &__flex-container {
@@ -101,6 +103,14 @@
     width: 13rem;
     position: relative;
     margin: auto;
+    overflow: hidden;
+    transform: scale(1);
+    transition: all 0.5s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 2px 3px 10px transparentize($color: $black, $amount: 0.5);
+    }
 
     &__icon {
       height: 7.3rem;
@@ -201,6 +211,7 @@
 
   .projects {
     max-height: 76rem;
+    margin-top: 4rem;
 
     &__heading {
       @include page-padding;
@@ -242,9 +253,11 @@
 @include media(">=screen-md") {
   .services {
     margin-top: 5.3rem;
+    margin-bottom: 5rem;
 
     &__heading {
-      position: absolute;
+      //position: absolute;
+      margin-bottom: 1rem;
     }
 
     &__flex-container {
@@ -252,18 +265,13 @@
       align-items: center;
     }
 
-    .icon-container {
-      width: 50%;
-      position: relative;
-      top: 7rem;
-    }
-
     &__image {
       width: 50%;
-      height: 65rem;
+      height: 50rem;
     }
 
     .icon-container__icon {
+      padding-top: 5rem;
       p {
         //margin-bottom: 5rem;
       }
