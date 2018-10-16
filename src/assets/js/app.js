@@ -1,4 +1,91 @@
 $(document).ready(function() {
+  // var PIXEL_STEP = 10;
+  // var LINE_HEIGHT = 40;
+  // var PAGE_HEIGHT = 800;
+
+  // //Wheel normalisation
+  // function normalizeWheel(/*object*/ event) /*object*/ {
+  //   var sX = 0,
+  //     sY = 0, // spinX, spinY
+  //     pX = 0,
+  //     pY = 0; // pixelX, pixelY
+
+  //   // Legacy
+  //   if ("detail" in event) {
+  //     sY = event.detail;
+  //   }
+  //   if ("wheelDelta" in event) {
+  //     sY = -event.wheelDelta / 120;
+  //   }
+  //   if ("wheelDeltaY" in event) {
+  //     sY = -event.wheelDeltaY / 120;
+  //   }
+  //   if ("wheelDeltaX" in event) {
+  //     sX = -event.wheelDeltaX / 120;
+  //   }
+
+  //   // side scrolling on FF with DOMMouseScroll
+  //   if ("axis" in event && event.axis === event.HORIZONTAL_AXIS) {
+  //     sX = sY;
+  //     sY = 0;
+  //   }
+
+  //   pX = sX * PIXEL_STEP;
+  //   pY = sY * PIXEL_STEP;
+
+  //   if ("deltaY" in event) {
+  //     pY = event.deltaY;
+  //   }
+  //   if ("deltaX" in event) {
+  //     pX = event.deltaX;
+  //   }
+
+  //   if ((pX || pY) && event.deltaMode) {
+  //     if (event.deltaMode == 1) {
+  //       // delta in LINE units
+  //       pX *= LINE_HEIGHT;
+  //       pY *= LINE_HEIGHT;
+  //     } else {
+  //       // delta in PAGE units
+  //       pX *= PAGE_HEIGHT;
+  //       pY *= PAGE_HEIGHT;
+  //     }
+  //   }
+
+  //   // Fall-back if spin cannot be determined
+  //   if (pX && !sX) {
+  //     sX = pX < 1 ? -1 : 1;
+  //   }
+  //   if (pY && !sY) {
+  //     sY = pY < 1 ? -1 : 1;
+  //   }
+
+  //   return {
+  //     spinX: sX,
+  //     spinY: sY,
+  //     pixelX: pX,
+  //     pixelY: pY
+  //   };
+  // }
+
+  // var $window = $(window); //Window object
+  // var scrollTime = 1; //Scroll time
+  // var scrollDistance = 300;
+
+  // $window.on("wheel", function(event) {
+  //   event.preventDefault();
+  //   var results = normalizeWheel(event.originalEvent);
+  //   var scrollTop = $window.scrollTop();
+  //   var finalScroll = scrollTop + parseInt(results.spinY * scrollDistance);
+
+  //   TweenMax.to($window, scrollTime, {
+  //     scrollTo: { y: finalScroll, autoKill: false },
+  //     ease: Power1.easeOut,
+  //     autoKill: true,
+  //     overwrite: 5
+  //   });
+  // });
+
   //Mobile navigation
 
   var burgerContainer = $(".hamburger-container");
@@ -8,6 +95,7 @@ $(document).ready(function() {
   var line2 = $(".hamburger-container__line--2");
   var line3 = $(".hamburger-container__line--3");
   var links = $("nav-bar a");
+  var backToTop = $(".back-to-top-btn");
 
   burgerContainer.on("mouseenter", function() {
     line1.addClass("line-down");
@@ -104,7 +192,17 @@ $(document).ready(function() {
   var scrolling = false;
 
   $(window).on("scroll", function() {
+    var wScroll = $(this).scrollTop();
     scrolling = true;
+    if (wScroll > 100) {
+      backToTop.css({
+        transform: "translateX(0)"
+      });
+    } else {
+      backToTop.css({
+        transform: "translateX(50rem)"
+      });
+    }
   });
 
   setInterval(function() {
@@ -120,7 +218,26 @@ $(document).ready(function() {
       }
     }
   }, 50);
-});
+
+  $(window).on("scroll load", function() {
+    var parallaxImg = $(".parallax");
+    var elmOffset = parallaxImg.offset().top;
+    var scrollTop = $(window).scrollTop();
+    var distance = elmOffset - scrollTop;
+
+    parallaxImg.css({
+      backgroundPosition: "100%" + parseInt(distance / 20) + "px"
+    });
+  });
+
+  backToTop.on("click", function() {
+    backToTop.css({
+      transform: "translateX(-50rem)"
+    });
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+    return false;
+  });
+}); //End of jquery
 
 //Vanilla javascript
 

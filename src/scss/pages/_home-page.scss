@@ -64,14 +64,13 @@
   }
 
   &__image {
-    border: 1px solid red;
     background: url("/assets/images/service-img.jpg");
-    max-width: 100%;
-    // max-width: 48rem;
-    height: 40vw;
+    //max-width: 100%;
+    max-width: 48rem;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: 100%;
     margin-top: 5rem;
   }
 
@@ -131,7 +130,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 20rem;
+    height: 30rem;
     padding: 1rem;
     margin-bottom: 1rem;
     position: relative;
@@ -216,7 +215,7 @@
 
     &__tile {
       //width: 25%;
-      height: 54rem;
+      height: 40rem;
       overflow-x: hidden;
       margin: 0 2rem;
 
