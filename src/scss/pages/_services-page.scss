@@ -95,7 +95,8 @@
 
 .services-content {
   position: relative;
-  height: 80rem;
+  min-height: 80rem;
+  height: auto;
 
   &__svg {
     position: absolute;
@@ -159,7 +160,8 @@
     }
 
     &__text,
-    &__slider {
+    &__slider,
+    .office-refurb-section {
       max-width: 50%;
     }
 

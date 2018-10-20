@@ -715,7 +715,8 @@ path {
 
 .services-content {
   position: relative;
-  height: 80rem; }
+  min-height: 80rem;
+  height: auto; }
   .services-content__svg {
     position: absolute;
     bottom: 0;
@@ -763,7 +764,8 @@ path {
         -ms-flex-align: center;
             align-items: center;
     height: 100%; }
-  .services-content__text, .services-content__slider {
+  .services-content__text, .services-content__slider,
+  .services-content .office-refurb-section {
     max-width: 50%; }
   .services-content__text {
     margin-bottom: 3rem; } }
