@@ -1,0 +1,24 @@
+.flex-half {
+  &__box1 {
+    width: 100%;
+    height: auto;
+  }
+
+  &__box2 {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+
+@include media(">=screen-sm") {
+  .flex-half {
+    display: flex;
+    flex-direction: row;
+
+    &__box1,
+    &__box2 {
+      width: 50%;
+    }
+  }
+}

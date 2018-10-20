@@ -65,31 +65,42 @@
     margin-bottom: 3rem;
   }
 
-  &__image {
-    background: url("/assets/images/service-img.jpg");
+  &__image-container {
     width: 100%;
-    //max-width: 50rem;
-    height: 50rem;
-    background-repeat: no-repeat;
-    background-size: 110%;
-    background-position: 100%;
-    //margin-top: 5rem;
-    position: relative;
-    top: -10rem;
+    height: 40rem;
+    background: blue;
+    overflow: hidden;
+
+    &-parallax-image {
+      height: 50rem;
+      width: 100%;
+      background: url("/assets/images/service-img.jpg");
+      background-repeat: no-repeat;
+      background-position: 100%;
+      position: relative;
+      background-size: 110%;
+      top: -5rem;
+    }
   }
 
-  &__flex-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-}
+  // &__image {
+  //
+  //   width: 100%;
+  //   //max-width: 50rem;
+  //   height: 50rem;
+  //   background-repeat: no-repeat;
+  //   background-size: 110%;
+  //   background-position: 100%;
+  //   //margin-top: 5rem;
+  //   position: relative;
+  //   top: -10rem;
+  // }
 
-.parallax-container {
-  height: 35rem;
-  width: 100%;
-  background: red;
-  overflow: hidden;
+  // &__flex-container {
+  //   display: flex;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  // }
 }
 
 .icon-container {
@@ -202,16 +213,17 @@
     }
   }
 
-  .parallax-container {
-    width: 50%;
-  }
-
   .services {
-    @include page-padding;
+    //@include page-padding;
 
     &__heading {
       text-align: left;
-      //@include page-padding;
+      @include page-padding;
+    }
+
+    &__image-container {
+      @include abs-center;
+      max-width: 50rem;
     }
   }
 
@@ -277,10 +289,10 @@
       margin-bottom: 1rem;
     }
 
-    &__flex-container {
-      flex-direction: row;
-      align-items: center;
-    }
+    // &__flex-container {
+    //   flex-direction: row;
+    //   align-items: center;
+    // }
 
     &__image {
       //width: 100%;
