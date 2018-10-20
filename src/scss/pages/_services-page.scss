@@ -118,6 +118,8 @@
 
   h2 {
     text-align: center;
+    line-height: 1;
+    margin-bottom: 3rem;
   }
 
   &__text,
@@ -125,7 +127,8 @@
     max-width: 100%;
   }
 
-  &__text {
+  &__text,
+  .office-refurb-section {
     margin-bottom: 3rem;
     @include page-padding;
   }
@@ -160,13 +163,16 @@
     }
 
     &__text,
-    &__slider,
-    .office-refurb-section {
+    &__slider {
       max-width: 50%;
     }
 
     &__text {
       margin-bottom: 3rem;
     }
+  }
+
+  .office-refurb-section {
+    width: 50%;
   }
 }

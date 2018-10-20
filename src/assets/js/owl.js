@@ -30,7 +30,7 @@ $(document).ready(function() {
     center: true,
     autoplay: true,
     margin: 10,
-    items: 3,
+    items: 2,
     autoplayTimeout: 3000,
     autoplayHoverPause: true,
     touchDrag: true,

@@ -482,7 +482,8 @@ path {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  padding-bottom: 5rem; }
   .icon-container__icon {
     width: calc(100% / 3); }
   .icon-container__title {
@@ -534,9 +535,12 @@ path {
     padding: 1rem;
     margin-bottom: 1rem;
     position: relative; }
+    .projects__tile:hover .projects__info {
+      background: rgba(252, 172, 1, 0.5);
+      color: #1f1f1f; }
   .projects__info {
-    background: rgba(19, 31, 83, 0.5);
-    color: white;
+    background: rgba(255, 255, 255, 0.5);
+    color: #131f53;
     position: absolute;
     left: 0;
     top: 50%;
@@ -575,9 +579,11 @@ path {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     max-width: 50rem; }
-  .icon-container__icon p {
-    padding-top: 1rem;
-    margin-bottom: 3rem; }
+  .icon-container {
+    padding-bottom: 0; }
+    .icon-container__icon p {
+      padding-top: 1rem;
+      margin-bottom: 3rem; }
   .projects {
     max-height: 76rem;
     margin-top: 4rem; }
@@ -602,7 +608,7 @@ path {
     .projects__info {
       display: block;
       height: 30rem;
-      width: auto;
+      width: 75%;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -735,10 +741,13 @@ path {
         -ms-flex-direction: column;
             flex-direction: column; }
   .services-content h2 {
-    text-align: center; }
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 3rem; }
   .services-content__text, .services-content__slider {
     max-width: 100%; }
-  .services-content__text {
+  .services-content__text,
+  .services-content .office-refurb-section {
     margin-bottom: 3rem;
     padding: 0px 4rem; }
   .services-content .owl-dots {
@@ -764,11 +773,12 @@ path {
         -ms-flex-align: center;
             align-items: center;
     height: 100%; }
-  .services-content__text, .services-content__slider,
-  .services-content .office-refurb-section {
+  .services-content__text, .services-content__slider {
     max-width: 50%; }
   .services-content__text {
-    margin-bottom: 3rem; } }
+    margin-bottom: 3rem; }
+  .office-refurb-section {
+    width: 50%; } }
 
 .projects-page-header {
   position: relative; }
