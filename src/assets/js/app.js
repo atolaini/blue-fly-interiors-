@@ -240,7 +240,7 @@ $(document).ready(function() {
     var distance = elmOffset - scrollTop;
 
     parallaxImg.css({
-      backgroundPosition: "100%" + parseInt(distance / 25) + "px"
+      backgroundPosition: "100%" + parseInt(distance / 15) + "px"
     });
   });
 
