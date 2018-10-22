@@ -1,0 +1,1 @@
+$(document).ready(function(){var t=$("#contact-form");t.validator(),t.on("submit",function(t){if(!t.isDefaultPrevented()){return $.ajax({type:"POST",url:"contact.php",data:$(this).serialize(),success:function(t){var e=$(".message-alert"),a="alert-"+t.type,r=t.message;a&&r&&(e.text(r),$("#contact-form")[0].rest())}}),!1}})});

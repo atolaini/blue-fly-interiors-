@@ -162,6 +162,20 @@ $(document).ready(function() {
     }
   });
 
+  //Open close modal
+
+  var modalBtn = $(".open-modal");
+  var modal = $(".form-modal");
+  var closeBtn = $(".form-modal__close");
+
+  modalBtn.on("click", function() {
+    modal.addClass("open");
+  });
+
+  closeBtn.on("click", function() {
+    modal.removeClass("open");
+  });
+
   //BEFORE AFTER SLIDER
   var wrapper = $("#wrapper");
   var topLayer = wrapper.find(".top");

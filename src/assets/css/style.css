@@ -413,17 +413,29 @@ path {
   transition: stroke-dashoffset 3s ease-out, opacity 2s ease 3s; }
 
 .form-modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background: #131f53;
   width: 100%;
-  height: 100vh; }
+  height: 100%;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in; }
   .form-modal__content {
     width: 100%;
     height: 100vh;
     position: relative;
     text-align: center; }
+  .form-modal__close {
+    color: white;
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+    font-size: 2.4rem; }
+    .form-modal__close:hover {
+      cursor: pointer;
+      color: #fcac01; }
   .form-modal__content-heading {
     color: white;
     margin-bottom: 2rem;
@@ -439,7 +451,8 @@ path {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%); }
+            transform: translate(-50%, -50%);
+    pointer-events: unset; }
   .form-modal__label {
     padding-right: 3rem; }
     .form-modal__label .far,
@@ -457,7 +470,9 @@ path {
     border-right: none;
     position: relative;
     -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease; }
+    transition: all 0.5s ease;
+    color: white;
+    font-size: 1.8rem; }
     .form-modal__input:focus {
       outline: none;
       border-bottom: 1px solid #fcac01; }
@@ -490,6 +505,12 @@ path {
       cursor: pointer;
       background: #fcac01;
       color: white; }
+
+.open {
+  opacity: 1;
+  z-index: 333333333;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out; }
 
 .home-page-hero {
   position: relative;

@@ -1,16 +1,31 @@
 .form-modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   background: $brand-primary;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s ease-in;
 
   &__content {
     width: 100%;
     height: 100vh;
     position: relative;
     text-align: center;
+  }
+
+  &__close {
+    color: white;
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+    font-size: 2.4rem;
+
+    &:hover {
+      cursor: pointer;
+      color: $brand-secondary;
+    }
   }
 
   &__content-heading {
@@ -27,6 +42,7 @@
 
   &__form {
     @include abs-center;
+    pointer-events: unset;
   }
 
   &__label {
@@ -49,6 +65,8 @@
     border-right: none;
     position: relative;
     transition: all 0.5s ease;
+    color: white;
+    font-size: 1.8rem;
 
     &:focus {
       outline: none;
@@ -80,4 +98,10 @@
   &__send-btn {
     @include btn-yellow($width: 20rem, $height: 3rem);
   }
+}
+
+.open {
+  opacity: 1;
+  z-index: 333333333;
+  transition: all 0.5s ease-out;
 }
