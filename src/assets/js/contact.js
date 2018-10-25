@@ -1,28 +1,48 @@
 $(document).ready(function() {
+  //Get the form
   var form = $("#contact-form");
+  //Get the message div
+  var formMessage = $("#form-messages");
 
-  form.validator();
+  $(form).submit(function(e) {
+    //stop the browser from submitting the form
+    e.preventDefault();
+    //Serialize the data
+    var formData = $(form).serialize();
 
-  form.on("submit", function(e) {
-    if (!e.isDefaultPrevented()) {
-      var url = "contact.php";
+    //submit the form using ajax
+    $.ajax({
+      type: "POST",
+      url: $(form).attr("action"),
+      data: formData
+    })
+      .done(function(response) {
+        //Make sre that the formMessage div has the success class.
+        $(formMessage).removeClass("error");
+        $(formMessage).addClass("success");
 
-      $.ajax({
-        type: "POST",
-        url: url,
-        data: $(this).serialize(),
-        success: function(data) {
-          var alert = $(".message-alert");
-          var messageAlert = "alert-" + data.type;
-          var messageText = data.message;
+        //set the message text
+        $(formMessage).text(response);
 
-          if (messageAlert && messageText) {
-            alert.text(messageText);
-            $("#contact-form")[0].rest();
-          }
+        //clear the form
+        $("#name").val("");
+        $("#email").val("");
+        $("#phone").val("");
+        $("#message").val("");
+      })
+      .fail(function(data) {
+        //make sure that the formMessages div has error class
+        $(formMessage).removeClass("success");
+        $(formMessage).addClass("error");
+
+        //Set the message text.
+        if (data.responseText !== "") {
+          $(formMessage).text(data.responseText);
+        } else {
+          $(formMessage).text(
+            "oops! Something has gone wrong and your message wasnt sent."
+          );
         }
       });
-      return false;
-    }
   });
 });
