@@ -182,6 +182,9 @@ h2 {
   .home-icon:hover {
     color: #fcac01; }
 
+.current {
+  color: #fcac01; }
+
 .contact-btn {
   position: fixed;
   top: 1rem;
@@ -796,7 +799,7 @@ path {
   position: relative;
   height: 50rem;
   background: url("/assets/images/services-hero.jpg");
-  background-size: auto 50rem;
+  background-size: auto 60rem;
   background-repeat: no-repeat;
   background-attachment: none;
   background-position: center; }
@@ -977,7 +980,7 @@ path {
 @media (min-width: 320px) {
   .projects-hero {
     background-attachment: fixed;
-    background-position: left; } }
+    background-position: center right; } }
 
 @media (min-width: 991px) {
   .projects-main-content {

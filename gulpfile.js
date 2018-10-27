@@ -15,7 +15,7 @@ const browserSync = require("browser-sync").create();
 gulp.task("browserSync", function() {
   browserSync.init({
     server: {
-      baseDir: "dist"
+      baseDir: "src"
     }
   });
 });

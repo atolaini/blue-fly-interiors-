@@ -88,6 +88,21 @@ $(document).ready(function() {
 
   //Mobile navigation
 
+  function navHighlight(elem, home, active) {
+    var url = location.href.split("/"),
+      loc = url[url.length - 1],
+      link = document.querySelectorAll(elem);
+    for (var i = 0; i < link.length; i++) {
+      var path = link[i].href.split("/"),
+        page = path[path.length - 1];
+      if (page == loc || (page == home && loc == "")) {
+        link[i].className += " " + active;
+        document.body.className += " " + page.substr(0, page.lastIndexOf("."));
+      }
+    }
+  }
+  navHighlight(".nav-bar a", "index.htm", "current");
+
   var burgerContainer = $(".hamburger-container");
   var navBar = $(".nav-bar");
   var lines = $(".nav-bar__item");
@@ -248,16 +263,16 @@ $(document).ready(function() {
     }
   }, 50);
 
-  $(window).on("scroll load", function() {
-    var parallaxImg = $(".parallax");
-    var elmOffset = parallaxImg.offset().top;
-    var scrollTop = $(window).scrollTop();
-    var distance = elmOffset - scrollTop;
+  // $(window).on("scroll load", function() {
+  //   var parallaxImg = $(".parallax");
+  //   var elmOffset = parallaxImg.offset().top;
+  //   var scrollTop = $(window).scrollTop();
+  //   var distance = elmOffset - scrollTop;
 
-    parallaxImg.css({
-      backgroundPosition: "100%" + parseInt(distance / 15) + "px"
-    });
-  });
+  //   parallaxImg.css({
+  //     backgroundPosition: "100%" + parseInt(distance / 15) + "px"
+  //   });
+  // });
 
   backToTop.on("click", function() {
     backToTop.css({
