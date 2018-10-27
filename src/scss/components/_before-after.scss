@@ -1,7 +1,7 @@
 #wrapper {
   position: relative;
   width: 100%;
-  min-height: 40vw;
+  min-height: 50vw;
   overflow: hidden;
   margin: 1rem 0;
 }
@@ -9,14 +9,14 @@
 .layer {
   position: absolute;
   width: 100vw;
-  min-height: 40vw;
+  min-height: 50vw;
   overflow: hidden;
 }
 
 .layer .content-wrap {
   position: absolute;
   width: 100vw;
-  min-height: 40vw;
+  min-height: 50vw;
 }
 
 .layer .content-body {
@@ -30,13 +30,13 @@
 
 .layer img {
   position: absolute;
-  width: 35%;
+  width: 45%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.layer h1 {
+.layer p {
   font-size: 2rem;
 }
 
@@ -49,8 +49,9 @@
   right: 5%;
 }
 
-.bottom h1 {
+.bottom p {
   color: #fdab00;
+  font-weight: bold;
 }
 
 .top {
@@ -63,6 +64,7 @@
 .top .content-body {
   left: 5%;
   color: #222;
+  font-weight: bold;
 }
 
 .handle {
@@ -92,4 +94,16 @@
 .skewed .top .content-wrap {
   transform: skew(30deg);
   margin-left: 1000px;
+}
+
+@include media(">=screen-sm") {
+  .layer p {
+    font-size: 4rem;
+  }
+}
+
+@include media(">=screen-md") {
+  .layer p {
+    font-size: 8rem;
+  }
 }

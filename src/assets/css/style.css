@@ -121,10 +121,14 @@ h2 {
       opacity: 1; }
 
 .nav-bar__drop-down {
-  overflow: hidden;
   -webkit-transform: scaleY(0);
           transform: scaleY(0);
-  height: 0; }
+  height: 0;
+  padding-left: 2rem; }
+  .nav-bar__drop-down-item:not(:last-child) {
+    margin-bottom: 0.5rem; }
+  .nav-bar__drop-down-link {
+    color: #fff; }
 
 .show-dropDown,
 .hide-dropDown {
@@ -132,11 +136,13 @@ h2 {
           transform-origin: top; }
 
 .show-dropDown {
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
+  -webkit-transform: scaleY(1.2);
+          transform: scaleY(1.2);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-  height: 20rem; }
+  height: 30rem; }
+  .show-dropDown .nav-bar__drop-down {
+    height: 20rem; }
 
 .hide-dropDown {
   -webkit-transform: scaleY(0);
@@ -261,23 +267,42 @@ h2 {
   .back-to-top-btn .fa-arrow-circle-up {
     color: #fcac01; }
 
+.who-we-are__contact-number-cta {
+  width: 20rem;
+  height: 5rem;
+  background: none;
+  border: 4px solid #131f53;
+  display: block;
+  margin: auto;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: "arial";
+  font-weight: bold;
+  margin-top: 4rem; }
+  .who-we-are__contact-number-cta a {
+    color: #131f53; }
+
+@media (min-width: 768px) {
+  .who-we-are__contact-number-cta {
+    display: none; } }
+
 #wrapper {
   position: relative;
   width: 100%;
-  min-height: 40vw;
+  min-height: 50vw;
   overflow: hidden;
   margin: 1rem 0; }
 
 .layer {
   position: absolute;
   width: 100vw;
-  min-height: 40vw;
+  min-height: 50vw;
   overflow: hidden; }
 
 .layer .content-wrap {
   position: absolute;
   width: 100vw;
-  min-height: 40vw; }
+  min-height: 50vw; }
 
 .layer .content-body {
   width: 25%;
@@ -290,13 +315,13 @@ h2 {
 
 .layer img {
   position: absolute;
-  width: 35%;
+  width: 45%;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%); }
 
-.layer h1 {
+.layer p {
   font-size: 2rem; }
 
 .bottom {
@@ -306,8 +331,9 @@ h2 {
 .bottom .content-body {
   right: 5%; }
 
-.bottom h1 {
-  color: #fdab00; }
+.bottom p {
+  color: #fdab00;
+  font-weight: bold; }
 
 .top {
   background-color: #eee;
@@ -317,7 +343,8 @@ h2 {
 
 .top .content-body {
   left: 5%;
-  color: #222; }
+  color: #222;
+  font-weight: bold; }
 
 .handle {
   position: absolute;
@@ -347,6 +374,14 @@ h2 {
   -webkit-transform: skew(30deg);
           transform: skew(30deg);
   margin-left: 1000px; }
+
+@media (min-width: 768px) {
+  .layer p {
+    font-size: 4rem; } }
+
+@media (min-width: 991px) {
+  .layer p {
+    font-size: 8rem; } }
 
 .footer {
   padding: 0px 4rem;
@@ -565,6 +600,8 @@ path {
     margin: auto; }
   .who-we-are__heading {
     text-align: center; }
+  .who-we-are__contact-number {
+    display: none; }
 
 .services {
   position: relative;
@@ -680,6 +717,13 @@ path {
     .who-we-are__heading {
       text-align: left;
       margin-bottom: 3.5rem; }
+    .who-we-are__contact-number {
+      display: block;
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 3rem;
+      border: 4px solid #fcac01;
+      padding: 2rem; }
   .services__heading {
     text-align: left;
     padding: 0px 4rem; }

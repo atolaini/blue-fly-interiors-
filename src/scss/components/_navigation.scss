@@ -68,9 +68,20 @@
 
 .nav-bar__drop-down {
   //border: 1px solid white;
-  overflow: hidden;
+  // overflow: hidden;
   transform: scaleY(0);
   height: 0;
+  padding-left: 2rem;
+
+  &-item {
+    &:not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &-link {
+    color: $white;
+  }
 }
 
 .show-dropDown,
@@ -79,9 +90,13 @@
 }
 
 .show-dropDown {
-  transform: scaleY(1);
+  transform: scaleY(1.2);
   transition: all 0.5s ease;
-  height: 20rem;
+  height: 30rem;
+
+  .nav-bar__drop-down {
+    height: 20rem;
+  }
 }
 
 .hide-dropDown {

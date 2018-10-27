@@ -46,3 +46,27 @@
     color: $brand-secondary;
   }
 }
+
+.who-we-are__contact-number-cta {
+  width: 20rem;
+  height: 5rem;
+  background: none;
+  border: 4px solid $brand-primary;
+  display: block;
+  margin: auto;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: $primary-font;
+  font-weight: bold;
+  margin-top: 4rem;
+
+  a {
+    color: $brand-primary;
+  }
+}
+
+@include media(">=screen-sm") {
+  .who-we-are__contact-number-cta {
+    display: none;
+  }
+}
