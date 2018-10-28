@@ -4,6 +4,7 @@
   height: 18rem;
   background: $brand-primary;
   display: flex;
+  flex-direction: column;
   //justify-content: space-between;
   align-items: center;
   position: relative;
@@ -30,7 +31,8 @@
   &__nav {
     display: flex;
     list-style: none;
-    @include abs-center;
+    margin: 3rem 0;
+    //@include abs-center;
   }
 
   &__nav-item:not(:last-child) {
