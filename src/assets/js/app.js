@@ -247,18 +247,20 @@ $(document).ready(function() {
       });
     }
 
-    var hero = $(".hero").innerHeight();
-    var homeIcon = $(".home-icon");
-    var iconPos = homeIcon.offset().top;
+    if (!$("body").hasClass("index")) {
+      var hero = $(".hero").innerHeight();
+      var homeIcon = $(".home-icon");
+      var iconPos = homeIcon.offset().top;
 
-    if (iconPos >= hero) {
-      homeIcon.css({
-        color: "#fcac01"
-      });
-    } else {
-      homeIcon.css({
-        color: "white"
-      });
+      if (iconPos >= hero) {
+        homeIcon.css({
+          color: "#fcac01"
+        });
+      } else {
+        homeIcon.css({
+          color: "white"
+        });
+      }
     }
   });
 
@@ -276,16 +278,18 @@ $(document).ready(function() {
     }
   }, 50);
 
-  $(window).on("scroll load", function() {
-    var parallaxImg = $(".parallax");
-    var elmOffset = parallaxImg.offset().top;
-    var scrollTop = $(window).scrollTop();
-    var distance = elmOffset - scrollTop;
+  if ($(".parallax")[0]) {
+    $(window).on("scroll load", function() {
+      var parallaxImg = $(".parallax");
+      var elmOffset = parallaxImg.offset().top;
+      var scrollTop = $(window).scrollTop();
+      var distance = elmOffset - scrollTop;
 
-    parallaxImg.css({
-      backgroundPosition: "100%" + parseInt(distance / 20) + "px"
+      parallaxImg.css({
+        backgroundPosition: "100%" + parseInt(distance / 20) + "px"
+      });
     });
-  });
+  }
 
   backToTop.on("click", function() {
     backToTop.css({
@@ -294,6 +298,34 @@ $(document).ready(function() {
     $("html, body").animate({ scrollTop: 0 }, 1000);
     return false;
   });
+
+  //dynamically add project slider images
+  //var testClass = body.attr("class");
+
+  //if the body has id project do this
+  var pageBody = $("body");
+  var bodyId = pageBody.attr("id");
+  if (bodyId == "project") {
+    var testClass = pageBody.attr("class");
+    $(".projects-slider-img.slide1").css({
+      "background-image": "url(assets/images/" + testClass + "/img1.jpg)"
+    });
+    $(".projects-slider-img.slide2").css({
+      "background-image": "url(assets/images/" + testClass + "/img2.jpg)"
+    });
+    $(".projects-slider-img.slide3").css({
+      "background-image": "url(assets/images/" + testClass + "/img3.jpg)"
+    });
+    $(".projects-slider-img.slide4").css({
+      "background-image": "url(assets/images/" + testClass + "/img4.jpg)"
+    });
+    $(".projects-slider-img.slide5").css({
+      "background-image": "url(assets/images/" + testClass + "/img5.jpg)"
+    });
+    $(".projects-slider-img.slide6").css({
+      "background-image": "url(assets/images/" + testClass + "/img6.jpg)"
+    });
+  }
 }); //End of jquery
 
 //Vanilla javascript

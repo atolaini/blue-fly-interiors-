@@ -57,6 +57,7 @@ $(document).ready(function() {
     autoplay: true,
     margin: 10,
     items: 1,
+    autoheight: true,
     autoplayTimeout: 3000,
     autoplayHoverPause: true,
     touchDrag: true,
