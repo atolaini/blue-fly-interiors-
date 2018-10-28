@@ -8,6 +8,7 @@ const cleanCSS = require("gulp-clean-css");
 const uglify = require("gulp-uglify");
 const pump = require("pump");
 const browserSync = require("browser-sync").create();
+const sourcemap = require("gulp-sourcemaps");
 
 //TASKS
 
@@ -32,7 +33,9 @@ gulp.task("minifyHtml", () => {
 gulp.task("sass", () => {
   gulp
     .src(["src/scss/**/*.scss"], ["sass"])
+    .pipe(sourcemap.init())
     .pipe(sass().on("error", sass.logError))
+    .pipe(sourcemap.write())
     .pipe(prefix("last 2 versions"))
     .pipe(gulp.dest("src/assets/css"))
     .pipe(

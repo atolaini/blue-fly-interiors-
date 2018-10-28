@@ -1,90 +1,90 @@
 $(document).ready(function() {
-  // var PIXEL_STEP = 10;
-  // var LINE_HEIGHT = 40;
-  // var PAGE_HEIGHT = 800;
+  var PIXEL_STEP = 10;
+  var LINE_HEIGHT = 40;
+  var PAGE_HEIGHT = 800;
 
-  // //Wheel normalisation
-  // function normalizeWheel(/*object*/ event) /*object*/ {
-  //   var sX = 0,
-  //     sY = 0, // spinX, spinY
-  //     pX = 0,
-  //     pY = 0; // pixelX, pixelY
+  //Wheel normalisation
+  function normalizeWheel(/*object*/ event) /*object*/ {
+    var sX = 0,
+      sY = 0, // spinX, spinY
+      pX = 0,
+      pY = 0; // pixelX, pixelY
 
-  //   // Legacy
-  //   if ("detail" in event) {
-  //     sY = event.detail;
-  //   }
-  //   if ("wheelDelta" in event) {
-  //     sY = -event.wheelDelta / 120;
-  //   }
-  //   if ("wheelDeltaY" in event) {
-  //     sY = -event.wheelDeltaY / 120;
-  //   }
-  //   if ("wheelDeltaX" in event) {
-  //     sX = -event.wheelDeltaX / 120;
-  //   }
+    // Legacy
+    if ("detail" in event) {
+      sY = event.detail;
+    }
+    if ("wheelDelta" in event) {
+      sY = -event.wheelDelta / 120;
+    }
+    if ("wheelDeltaY" in event) {
+      sY = -event.wheelDeltaY / 120;
+    }
+    if ("wheelDeltaX" in event) {
+      sX = -event.wheelDeltaX / 120;
+    }
 
-  //   // side scrolling on FF with DOMMouseScroll
-  //   if ("axis" in event && event.axis === event.HORIZONTAL_AXIS) {
-  //     sX = sY;
-  //     sY = 0;
-  //   }
+    // side scrolling on FF with DOMMouseScroll
+    if ("axis" in event && event.axis === event.HORIZONTAL_AXIS) {
+      sX = sY;
+      sY = 0;
+    }
 
-  //   pX = sX * PIXEL_STEP;
-  //   pY = sY * PIXEL_STEP;
+    pX = sX * PIXEL_STEP;
+    pY = sY * PIXEL_STEP;
 
-  //   if ("deltaY" in event) {
-  //     pY = event.deltaY;
-  //   }
-  //   if ("deltaX" in event) {
-  //     pX = event.deltaX;
-  //   }
+    if ("deltaY" in event) {
+      pY = event.deltaY;
+    }
+    if ("deltaX" in event) {
+      pX = event.deltaX;
+    }
 
-  //   if ((pX || pY) && event.deltaMode) {
-  //     if (event.deltaMode == 1) {
-  //       // delta in LINE units
-  //       pX *= LINE_HEIGHT;
-  //       pY *= LINE_HEIGHT;
-  //     } else {
-  //       // delta in PAGE units
-  //       pX *= PAGE_HEIGHT;
-  //       pY *= PAGE_HEIGHT;
-  //     }
-  //   }
+    if ((pX || pY) && event.deltaMode) {
+      if (event.deltaMode == 1) {
+        // delta in LINE units
+        pX *= LINE_HEIGHT;
+        pY *= LINE_HEIGHT;
+      } else {
+        // delta in PAGE units
+        pX *= PAGE_HEIGHT;
+        pY *= PAGE_HEIGHT;
+      }
+    }
 
-  //   // Fall-back if spin cannot be determined
-  //   if (pX && !sX) {
-  //     sX = pX < 1 ? -1 : 1;
-  //   }
-  //   if (pY && !sY) {
-  //     sY = pY < 1 ? -1 : 1;
-  //   }
+    // Fall-back if spin cannot be determined
+    if (pX && !sX) {
+      sX = pX < 1 ? -1 : 1;
+    }
+    if (pY && !sY) {
+      sY = pY < 1 ? -1 : 1;
+    }
 
-  //   return {
-  //     spinX: sX,
-  //     spinY: sY,
-  //     pixelX: pX,
-  //     pixelY: pY
-  //   };
-  // }
+    return {
+      spinX: sX,
+      spinY: sY,
+      pixelX: pX,
+      pixelY: pY
+    };
+  }
 
-  // var $window = $(window); //Window object
-  // var scrollTime = 1; //Scroll time
-  // var scrollDistance = 300;
+  var $window = $(window); //Window object
+  var scrollTime = 1; //Scroll time
+  var scrollDistance = 300;
 
-  // $window.on("wheel", function(event) {
-  //   event.preventDefault();
-  //   var results = normalizeWheel(event.originalEvent);
-  //   var scrollTop = $window.scrollTop();
-  //   var finalScroll = scrollTop + parseInt(results.spinY * scrollDistance);
+  $window.on("wheel", function(event) {
+    event.preventDefault();
+    var results = normalizeWheel(event.originalEvent);
+    var scrollTop = $window.scrollTop();
+    var finalScroll = scrollTop + parseInt(results.spinY * scrollDistance);
 
-  //   TweenMax.to($window, scrollTime, {
-  //     scrollTo: { y: finalScroll, autoKill: false },
-  //     ease: Power1.easeOut,
-  //     autoKill: true,
-  //     overwrite: 5
-  //   });
-  // });
+    TweenMax.to($window, scrollTime, {
+      scrollTo: { y: finalScroll, autoKill: false },
+      ease: Power1.easeOut,
+      autoKill: true,
+      overwrite: 5
+    });
+  });
 
   //Mobile navigation
 
@@ -190,7 +190,6 @@ $(document).ready(function() {
   var modal = $(".form-modal");
   var closeBtn = $(".form-modal__close");
   var navContact = $(".nav-contact");
-  console.log(navContact);
 
   $(modalBtn).on("click", function() {
     modal.addClass("open");
@@ -247,6 +246,20 @@ $(document).ready(function() {
         transform: "translateX(50rem)"
       });
     }
+
+    var hero = $(".hero").innerHeight();
+    var homeIcon = $(".home-icon");
+    var iconPos = homeIcon.offset().top;
+
+    if (iconPos >= hero) {
+      homeIcon.css({
+        color: "#fcac01"
+      });
+    } else {
+      homeIcon.css({
+        color: "white"
+      });
+    }
   });
 
   setInterval(function() {
@@ -263,16 +276,16 @@ $(document).ready(function() {
     }
   }, 50);
 
-  // $(window).on("scroll load", function() {
-  //   var parallaxImg = $(".parallax");
-  //   var elmOffset = parallaxImg.offset().top;
-  //   var scrollTop = $(window).scrollTop();
-  //   var distance = elmOffset - scrollTop;
+  $(window).on("scroll load", function() {
+    var parallaxImg = $(".parallax");
+    var elmOffset = parallaxImg.offset().top;
+    var scrollTop = $(window).scrollTop();
+    var distance = elmOffset - scrollTop;
 
-  //   parallaxImg.css({
-  //     backgroundPosition: "100%" + parseInt(distance / 15) + "px"
-  //   });
-  // });
+    parallaxImg.css({
+      backgroundPosition: "100%" + parseInt(distance / 20) + "px"
+    });
+  });
 
   backToTop.on("click", function() {
     backToTop.css({
