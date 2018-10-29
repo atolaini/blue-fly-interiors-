@@ -102,6 +102,7 @@ $(document).ready(function() {
     }
   }
   navHighlight(".nav-bar a", "index.htm", "current");
+  navHighlight(".services__nav a", "index.html", "serCurrent");
 
   var burgerContainer = $(".hamburger-container");
   var navBar = $(".nav-bar");
@@ -247,21 +248,23 @@ $(document).ready(function() {
       });
     }
 
-    if (!$("body").hasClass("index")) {
-      var hero = $(".hero").innerHeight();
-      var homeIcon = $(".home-icon");
-      var iconPos = homeIcon.offset().top;
+    $(document).ready(function() {
+      if (!$("body").hasClass("index")) {
+        var hero = $(".hero").innerHeight();
+        var homeIcon = $(".home-icon");
+        var iconPos = homeIcon.offset().top;
 
-      if (iconPos >= hero) {
-        homeIcon.css({
-          color: "#fcac01"
-        });
-      } else {
-        homeIcon.css({
-          color: "white"
-        });
+        if (iconPos >= hero) {
+          homeIcon.css({
+            color: "#fcac01"
+          });
+        } else {
+          homeIcon.css({
+            color: "white"
+          });
+        }
       }
-    }
+    });
   });
 
   setInterval(function() {

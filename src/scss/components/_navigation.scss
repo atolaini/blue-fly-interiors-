@@ -16,7 +16,7 @@
 
   &__nav {
     list-style: none;
-    padding-left: 4rem;
+    padding-left: 2.4rem;
   }
 
   &__item {
@@ -71,11 +71,12 @@
   // overflow: hidden;
   transform: scaleY(0);
   height: 0;
-  padding-left: 2rem;
+  padding-left: 1.7rem;
 
   &-item {
     &:not(:last-child) {
       margin-bottom: 0.5rem;
+      font-size: 1.5rem;
     }
   }
 
@@ -92,7 +93,7 @@
 .show-dropDown {
   transform: scaleY(1.2);
   transition: all 0.5s ease;
-  height: 30rem;
+  height: 25rem;
 
   .nav-bar__drop-down {
     height: 20rem;

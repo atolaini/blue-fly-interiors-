@@ -1,4 +1,4 @@
-window.sr = ScrollReveal({ reset: true });
+window.sr = ScrollReveal({ reset: false });
 // sr.reveal(".sr1", { delay: 500 });
 // sr.reveal(".sr2", { delay: 700 });
 // sr.reveal(".sr3", { delay: 900 });
@@ -15,10 +15,8 @@ sr.reveal(".who-we-are__contact-number", {
 
 sr.reveal(".icon-container__icon", {
   delay: 500,
-  interval: 500,
+  interval: 200,
   opacity: 0,
   scale: 1,
   easing: "ease-out"
 });
-
-

@@ -38,6 +38,7 @@
 .services__nav {
   &-bar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     list-style: none;
     padding-top: 2.3rem;
@@ -46,6 +47,7 @@
 
   &-item {
     position: relative;
+    margin-bottom: 1rem;
     &:not(:last-child) {
       margin-right: 2rem;
     }
@@ -146,6 +148,12 @@
 }
 
 @include media(">=screen-md") {
+  .services-nav {
+    &-bar {
+      flex-wrap: nowrap;
+    }
+  }
+
   .services-content {
     h2 {
       text-align: left;
@@ -174,5 +182,27 @@
 
   .office-refurb-section {
     width: 50%;
+  }
+}
+
+.serCurrent {
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: $brand-secondary;
+    left: 0;
+    bottom: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: $brand-secondary;
+    left: 0;
+    top: 0;
   }
 }

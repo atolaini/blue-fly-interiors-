@@ -1,4 +1,9 @@
 .projects-landing {
+  h2 {
+    line-height: 1.2;
+    margin-bottom: 3rem;
+  }
+
   &__txt {
     @include mobile-padding;
     padding-top: 1rem;
@@ -22,6 +27,12 @@
 
 .img1 {
   background: url("/assets/images/project1-main-img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img2 {
+  background: url("/assets/images/project2/img1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }

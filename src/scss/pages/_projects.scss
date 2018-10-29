@@ -2,6 +2,18 @@
   position: relative;
 }
 
+.projects-main-content {
+  &__flex {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  h2 {
+    line-height: 1.1;
+    margin-bottom: 4rem;
+  }
+}
+
 .projects-hero,
 .projects-landing-hero {
   position: relative;
@@ -66,10 +78,13 @@
 
     h2 {
       text-align: left;
+      margin-bottom: 2rem;
     }
 
     &__flex {
       display: flex;
+      flex-direction: row;
+      align-items: center;
     }
 
     &__text,

@@ -50,12 +50,12 @@
 }
 
 .bottom p {
-  color: #fdab00;
+  color: $brand-secondary;
   font-weight: bold;
 }
 
 .top {
-  background-color: #eee;
+  background-color: $brand-secondary;
   color: #222;
   z-index: 2;
   width: 50vw;
@@ -71,7 +71,7 @@
   position: absolute;
   height: 100%;
   display: block;
-  background: $brand-secondary;
+  background: $brand-primary;
   width: 0.5rem;
   top: 0;
   left: 50%;
@@ -104,6 +104,6 @@
 
 @include media(">=screen-md") {
   .layer p {
-    font-size: 8rem;
+    font-size: 5rem;
   }
 }
