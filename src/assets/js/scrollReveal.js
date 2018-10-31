@@ -20,3 +20,9 @@ sr.reveal(".icon-container__icon", {
   scale: 1,
   easing: "ease-out"
 });
+
+sr.reveal(".projects-hero__heading", {
+  delay: 3000,
+  origin: "bottom",
+  distance: "3000"
+});

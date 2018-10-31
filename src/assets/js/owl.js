@@ -24,7 +24,7 @@ $(document).ready(function() {
     }
   });
 
-  //Home pager slider
+  //services pager slider
   $(".services-content__slider").owlCarousel({
     loop: true,
     center: true,

@@ -66,6 +66,31 @@
   padding: 0 1rem;
 }
 
+@mixin dec-line {
+  &::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background: $brand-secondary;
+    top: 0;
+    left: -1rem;
+  }
+}
+
+@mixin heading {
+  position: relative;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 2rem;
+  text-align: left;
+
+  @include media(">=screen-sm") {
+    text-align: center;
+  }
+}
+
 @mixin btn-yellow($width, $height) {
   width: $width;
   height: $height;

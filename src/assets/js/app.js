@@ -272,7 +272,7 @@ $(document).ready(function() {
       scrolling = false;
 
       var svg = $("svg path");
-      var heroSection = $(".services-hero").height() / 2;
+      var heroSection = $(".services-hero").height() / 100;
       var wScroll = $(window).scrollTop();
 
       if (wScroll >= heroSection) {

@@ -1,0 +1,38 @@
+#office-partitions {
+  .services-content {
+    &__flex {
+      flex-direction: column;
+    }
+
+    &__text,
+    &__slider {
+      max-width: 100%;
+    }
+
+    &__svg {
+      bottom: 19rem;
+    }
+  }
+
+  .office-refurb-section {
+    width: 100%;
+  }
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.office-refurb-section__text {
+  margin-top: 3rem;
+}
+
+@include media(">=screen-sm") {
+  .office-refurb-section__text {
+    ul {
+      left: 5rem;
+      position: relative;
+    }
+  }
+}

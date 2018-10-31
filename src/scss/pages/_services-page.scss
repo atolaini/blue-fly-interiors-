@@ -1,6 +1,6 @@
 .services-hero {
   position: relative;
-  height: 50rem;
+  height: 35rem;
   background: url("/assets/images/services-hero.jpg");
   background-size: auto 60rem;
   background-repeat: no-repeat;
@@ -18,20 +18,18 @@
   }
 
   &__heading-container {
+    text-align: center;
     color: white;
-    position: absolute;
-    //width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0px 1rem;
-    margin: 0px 2rem;
-    border-left: 2px solid $brand-secondary;
     line-height: 1;
+    @include heading;
   }
 
   &__heading {
     color: white;
+    position: relative;
+    display: inline-block;
+
+    @include dec-line;
   }
 }
 
@@ -97,7 +95,7 @@
 
 .services-content {
   position: relative;
-  min-height: 80rem;
+  min-height: 40rem;
   height: auto;
 
   &__svg {
